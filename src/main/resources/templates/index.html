@@ -1,12 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Application</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>my-project</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"/>
+<link rel="stylesheet" href="/css/style.css"> 
+  
 </head>
 <body>
-    <h1>Hello World</h1>
-</body>
+
+    <div class="container-fluid">
+      <div class="row flex-lg-nowrap">
+        <div class="col">
+          <h1>Products</h1>
+          
+          
+
+          <div class="row flex-lg-nowrap">
+            <div class="col mb-3">
+              <div class="e-panel card">
+                <div class="card-body">
+                  <div class="card-title">
+                    <a th:href="@{/new-product}">
+                    <button class="btn btn-info">
+                        Create New Product
+                      </button></a>
+                  </div>
+                  
+                  <div class="e-table">
+                    <div class="table-responsive table-lg mt-3">
+                      <table class="table table-bordered">
+                      
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Brand</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        
+                        <tbody>
+                          <tr th:each ="product : ${products}">
+                            <td th:text="${product.id}"></td>
+                            <td th:text="${product.code}"></td>
+                            <td th:text="${product.name}"></td>
+                            <td th:text="${product.category}"></td>
+                            <td th:text="${product.brand}"></td>
+                            <td th:text="${product.type}"></td>
+                            <td th:text="${product.description}"></td>
+                            <td class="text-center align-middle">
+                              <a th:href="@{/update-product/{id}(id=${product.id})}"><button class="btn btn-success">
+                                  Edit
+                                </button>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                   <div class="d-flex justify-content-center">
+                    <nav aria label="page navigation example" >
+                      <ul class="pagination">
+        					<li class="page-item">
+            					<a class="page-link" th:if="${currentPage > 1}" th:href="@{/page/1}">
+            						First
+            					</a><span class="page-link" th:unless="${currentPage > 1}">First</span>
+        					</li>
+
+        					<li class="page-item">
+            					<a class="page-link" th:if="${currentPage > 1}" th:href="@{'/page/' + ${currentPage - 1}}">
+            						Previous
+            					</a><span class="page-link" th:unless="${currentPage > 1}">Previous</span>
+        					</li>
+        					<li class="page-item">
+            					<a class="page-link" href="#">Current</a>
+        					</li>
+
+        					<li class="page-item">
+            					<a class="page-link" th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}}">
+            						Next
+            					</a><span class="page-link" th:unless="${currentPage < totalPages}">Next</span>
+        					</li>
+
+        					<li class="page-item">
+            					<a class="page-link" th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}}">
+            						Last
+            					</a><span class="page-link" th:unless="${currentPage < totalPages}">Last</span>
+        					</li>
+    					</ul>
+    				</nav>
+                   </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+  </body>
 </html>

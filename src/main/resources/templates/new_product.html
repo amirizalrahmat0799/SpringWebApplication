@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>my-project</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+	<div class="container">
+		<h1>Create Product</h1>
+		<a th:href = "@{/}"><button class="btn btn-info">Back to listing</button></a>
+		<hr>
+		<p th:if="${addProduct_message}" th:text="${addProduct_message}" class="alert alert-success"></p>
+
+		<form action="#" th:action="@{/saveProduct}" th:object=${product} method="POST">
+			<label for="info"><i>input *Null* for non null value.</i></label>
+			
+			<div class="form-group row">
+			  <label class="col-sm-2 col-form-label"><b>Code* :</b></label>
+			  <div class="col-sm-5">
+				<input th:field="*{code}" type="text" class="form-control">
+				<p th:if="${#fields.hasErrors('code')}" th:errors="*{code}" class="alert alert-danger"></p>
+			  </div>
+			</div>
+			
+			<div class="form-group row">
+			  <label  class="col-sm-2 col-form-label"><b>Name* :</b></label>
+			  <div class="col-sm-5">
+				<input th:field="*{name}" type="text" class="form-control">
+				<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="alert alert-danger"></p>
+			  </div>
+			</div>
+			
+			<div class="form-group row">
+			  <label  class="col-sm-2 col-form-label"><b>Category* :</b></label>
+			  <div class="col-sm-5">
+				<input th:field="*{category}" type="text" class="form-control" >
+				<p th:if="${#fields.hasErrors('category')}" th:errors="*{category}" class="alert alert-danger"></p>
+			  </div>
+			</div>
+			
+			<div class="form-group row">
+			  <label  class="col-sm-2 col-form-label"><b>Brand :</b></label>
+			  <div class="col-sm-5">
+				<input th:field="*{brand}" type="text" class="form-control" >
+			  </div>
+			</div>
+			
+			<div class="form-group row">
+			  <label  class="col-sm-2 col-form-label"><b>Type :</b></label>
+			  <div class="col-sm-5">
+				<input th:field="*{type}" type="text" class="form-control" >
+			  </div>
+			</div>
+			
+			<div class="form-group row">
+			  <label class="col-sm-2 col-form-label"><b>Description :</b></label>
+			  <div class="col-sm-5">
+				<textarea th:field="*{description}" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+			  </div>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		  </form>
+		
+		<hr>
+	</div>
+	
+</body>
+</html>
