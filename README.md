@@ -15,3 +15,6 @@ Basically the same as add page but we retrive our data to update it
 
 REST Endpoints
 ![api](https://user-images.githubusercontent.com/106381212/192295802-ac25d0b8-5936-46ed-8550-467168309b4e.png)
+
+Testing crud operation using postman
+![postman](https://user-images.githubusercontent.com/106381212/192297246-fffeb174-cc8a-4a8b-85f5-1a6115a995f4.png)
