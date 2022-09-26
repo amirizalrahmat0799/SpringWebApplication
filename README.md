@@ -1,8 +1,7 @@
 # CRUD-and-Restful-Services
 This is a basic web application developed using thymeleaf java template engine and spring boot framework for simple crud operation and exposing rest API endpoints for client side.
 
-# UI
-CRUD SYSTEM
+# CRUD SYSTEM UI
 
 Mainpage
 ![mainPage](https://user-images.githubusercontent.com/106381212/192295375-d52801ed-d16a-4dc7-be5b-3580fd022524.png)
