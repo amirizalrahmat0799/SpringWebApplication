@@ -3,11 +3,13 @@ This is a basic web application developed using thymeleaf java template engine a
 
 # CRUD SYSTEM UI
 
-Mainpage
+This is Main page where we receive our data from databse
 ![mainPage](https://user-images.githubusercontent.com/106381212/192295375-d52801ed-d16a-4dc7-be5b-3580fd022524.png)
-AddPage
+
+Boostrap form to insert new data into the database
 ![addPage](https://user-images.githubusercontent.com/106381212/192296262-0d34f359-0049-4a75-93f1-f63082702805.png)
-UpdatePage
+
+Basically the same as add page but we retrive our data to update it
 ![updatePage](https://user-images.githubusercontent.com/106381212/192296289-28514be5-7dfa-4b67-9360-71e1920845b4.png)
 
 
