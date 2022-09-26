@@ -1,4 +1,4 @@
-# CRUD-and-Restful-Services
+# REST and CRUD Web Application
 This is a basic web application developed using thymeleaf java template engine and spring boot framework for simple crud operation and exposing rest API endpoints for client side.
 
 # CRUD SYSTEM UI
